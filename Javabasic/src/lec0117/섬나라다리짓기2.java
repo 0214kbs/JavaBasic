@@ -37,14 +37,21 @@ public class 섬나라다리짓기2 {
 		for (int i = 0; i < N; i++) {
 			boolean on = false;
 			int len = 1;
+			
 			for (int j = 0; j < N; j++) {
 				if(map[i][j]==1) {
 					if(on) {
 						// 다리를 만들고 있다가 1을 만나면 종료. 최댓값 갱신, 1을 만나면 새로운 시작이기도 함
+						/*
+						 * 탐색과정에서 1을 다시 만나는 경우 
+						 */
 						ans = Math.max(ans,len);
 						len = 1;
 					}else {
 						//다리는 만드는 시작
+						/*
+						 * 탐색 과정에서 1을 처음 만나는 경우 
+						 */
 						on = true;
 						len = 1;
 					}
