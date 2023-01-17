@@ -38,4 +38,14 @@ public class MyClass {
 		System.out.println("MyClass(int i, String s)");
 	}
 	
+	MyClass(A a){
+		System.out.println("A a");
+	}
+//	MyClass(B b){
+//		System.out.println("B b");
+//	}
+	MyClass(C c){
+		System.out.println("C c");
+	}
+	
 }
