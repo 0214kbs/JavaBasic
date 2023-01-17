@@ -44,7 +44,17 @@ public class 섬나라다리짓기 {
 							ny = dy[d]+ny;
 							nx = dx[d]+nx;
 							
-							if(nx<0 || ny<0||nx>=N || ny>=N || map[ny][nx]==1) break;
+							/*bug
+							 * if(nx<0 || ny<0||nx>=N || ny>=N || map[ny][nx]==1) 인경우
+							 * 0100001 -> "1"도 len++처리됨 
+							 */
+							if(nx<0 || ny<0||nx>=N || ny>=N) {
+								if(map[ny][nx]==1) {
+									len = 0;
+								}
+								else break;
+							}
+							
 							len++;
 						}
 						ans = Math.max(len,ans);
