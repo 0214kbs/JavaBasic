@@ -40,11 +40,9 @@ class Child3 extends Parent3{
 	// Child3() 에 error message
 	// error message : Implicit super constructor Parent3() is undefined. Must explicitly invoke another constructor
 		// cf) Implicit super constructor (= super() )
-	Child3(){
-//		super(); //자동 
-	} 
+	Child3(){ } 
 	Child3(String name){
-		super.name= name;
+		super(name);//		super.name= name;
 	}
 	
 	void m() {
