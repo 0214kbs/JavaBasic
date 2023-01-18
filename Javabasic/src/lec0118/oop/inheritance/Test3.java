@@ -42,6 +42,8 @@ class Child3 extends Parent3{
 		// cf) Implicit super constructor (= super() )
 	Child3(){ } 
 	Child3(String name){
+		// this와 super 모두 맨 앞에 와야하지만, 둘다 동시에 사용은 불가능함 
+//		System.out.println(this.name); 
 		super(name);//		super.name= name;
 	}
 	
