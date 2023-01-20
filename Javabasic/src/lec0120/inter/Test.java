@@ -37,6 +37,7 @@ public class Test {
 	// 다른 팀에서 작성, 배포 
 	static Fly getInstance() {
 //		return new Airplane();
-		return new Bird();
+//		return new Bird();
+		return new Dove();
 	}
 }
