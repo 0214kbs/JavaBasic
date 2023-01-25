@@ -5,5 +5,7 @@
 	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/thkim.jar"/>
 	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/jsy.jar"/>
 	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/itsme.jar"/>
+	<classpathentry kind="lib" path="C:/Users/SSAFY/Desktop/kbs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/mysql-connector-j-8.0.32.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
