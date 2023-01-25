@@ -7,7 +7,8 @@ public class SimpleException {
 		try {
 			System.out.println(intArray[2]);
 		}catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println("예외 처리 완료");
+			System.out.println("예외 처리 완료"+e.getMessage());
+			e.printStackTrace();
 		}
 		System.out.println("프로그램 종료");
 	}
