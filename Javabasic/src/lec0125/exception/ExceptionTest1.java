@@ -94,5 +94,14 @@ public class ExceptionTest1 {
 		}catch(IOException  e) { 
 			e.printStackTrace();
 		}// finally (close하는 목적으로는 굳이 쓰지 않음) 
+		
+		/* #5 try-finally
+		 * 
+		 */
+		try {
+			//checked exception 보다 runtime exception 처리코드 
+		}finally {
+			
+		}
 	}
 }
