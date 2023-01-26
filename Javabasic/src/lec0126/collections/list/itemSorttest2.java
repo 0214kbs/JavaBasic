@@ -15,10 +15,10 @@ public class itemSorttest2 {
 		al2.add(new Node(5,6,9));
 		System.out.println(al2);
 //		<Node> void java.util.Collections.sort(List<Node> list, Comparator<? super Node> c) 
-//																-> lambda 이용
+//																-> 		lambda 이용
 		Collections.sort(al2, (n1,n2)-> n1.y==n2.y ? n1.x-n2.x : n1.y-n2.y); 
 		System.out.println(al2);
-	}
+}
 	static class Node{
 		int y;
 		int x;
