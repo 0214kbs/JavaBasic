@@ -9,20 +9,16 @@ public class itemListTest {
 		al.add(new Item(1,"item1"));
 		al.add(new Item(2,"item2"));
 		al.add(new Item(3,"item3"));
-		System.out.println("---");
-		
 		// for
 		for(int i=0;i<al.size();i++) {
 			Item item = al.get(i);
 			System.out.println(item);
 		}
-		
 		System.out.println("---");
 		// foreach
 		for (Item item : al) {
 			System.out.println(item);
 		}
-		
 		System.out.println("---");
 		// Iterator 
 		Iterator<Item> itr = al.iterator();
