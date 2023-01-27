@@ -1,7 +1,6 @@
 package training.book;
 
 import java.util.Arrays;
-import java.util.Iterator;
 
 public class BookManager {
 	private static int MAX_SIZE = 100; // 관리할 최대 도서 수
