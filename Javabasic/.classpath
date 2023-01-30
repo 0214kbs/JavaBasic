@@ -12,5 +12,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/gson-2.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/jackson-annotations-2.12.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/jackson-core-2.12.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/jackson-databind-2.12.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
