@@ -1,0 +1,27 @@
+[
+    {
+       "empId": "111",
+       "empNm": "홍길동",
+       "salary": 1000
+    },
+    {
+       "empId": "222",
+       "empNm": "이길동",
+       "salary": 2000
+    },
+    {
+       "empId": "333",
+       "empNm": "삼길동",
+       "salary": 3000
+    },
+    {
+       "empId": "444",
+       "empNm": "사길동",
+       "salary": 4000
+    },
+    {
+       "empId": "555",
+       "empNm": "오길동",
+       "salary": 5000
+    }
+]
