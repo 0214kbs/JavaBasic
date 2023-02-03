@@ -2,10 +2,13 @@ package lec0203.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/// Prepared Statement
+// hardcoding된 value를 파라미터화 
 public class Test {
 	
 //	MySQL의 JDBC Driver 포함 jar 파일이 준비되어 있다. 
@@ -16,120 +19,126 @@ public class Test {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-//		String url = "jdbc:mysql://localhost:3306/test";
-		String url = "jdbc:mysql://localhost:3306/ssafydb";
+		String url = "jdbc:mysql://localhost:3306/test";
+//		String url = "jdbc:mysql://localhost:3306/ssafydb";
 		String user = "root";
 		String pwd = "1234";
 		
-		/*
+//		/*
 		// test schema
-		String insertSql = "insert into customer values(11,'11길동')";
-		String updateSql = "update customer set customer_nm = '11길동2' where customer_id = 11;";
-		String deleteSql = "DELETE FROM customer WHERE customer_id = 11;";
-		String selectSql = "select * from customer;";
-		*/
+		String insertSql = "insert into customer values(?,?);";
+		String updateSql = "update customer set customer_nm =? where customer_id = ?;";
+		String deleteSql = "DELETE FROM customer WHERE customer_id = ?;";
+		String selectSql = "select * from customer WHERE customer_id = ?;";
+//		*/
 		
-//		/* 
+		/* 
 		//ssafydb schema
 		String selectSql = "select * from countries";
 		String insertSql = "insert into countries values('KO','Corea',3);";
 		String updateSql = "update customer set country_name = 'Korea' where country_id = 'KO';";
 		String deleteSql = "DELETE FROM countries WHERE country_id = 'KO';";
-//		*/
+		*/
 		
 		Connection con = null;
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
+//		Statement stmt = null;
 		ResultSet rs = null;
 		int ret = -1;
 		
 		//insert
-		/*
+//		/*
 		try {
 			con = DriverManager.getConnection(url,user,pwd);
-			stmt = con.createStatement();
-			ret = stmt.executeUpdate(insertSql);		
+			pstmt = con.prepareStatement(insertSql);
+			pstmt.setInt(1, 11); // (parameterIndex , 해당 위치 값)
+			pstmt.setString(2,"11길동");
+			ret = pstmt.executeUpdate();		
 			System.out.println(ret);		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			try {
-				stmt.close();
+				pstmt.close();
 				con.close();
 			} catch (SQLException e2) {
 				e2.printStackTrace();
 			}			
 		}
-		 */
+//		 */
 		
 		//update
-//		/*
-		try {
-			con = DriverManager.getConnection(url,user,pwd);
-			stmt = con.createStatement();
-			ret = stmt.executeUpdate(updateSql);		
-			System.out.println(ret);		
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				stmt.close();
-				con.close();
-			} catch (SQLException e2) {
-				e2.printStackTrace();
-			}
-			
-		}
-//		*/
-		
-		// delete
-//		/*
-		try {
-			con = DriverManager.getConnection(url,user,pwd);
-			stmt = con.createStatement();
-			ret = stmt.executeUpdate(deleteSql);		
-			System.out.println(ret);		
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				stmt.close();
-				con.close();
-			} catch (SQLException e2) {
-				e2.printStackTrace();
-			}
-			
-		}
-//		*/
-		
-		// select
 		/*
 		try {
 			con = DriverManager.getConnection(url,user,pwd);
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(selectSql);		
+			pstmt = con.prepareStatement(updateSql);
+			pstmt.setString(1,"11길동2");
+			pstmt.setInt(2, 11);
+			ret = pstmt.executeUpdate();		
+			System.out.println(ret);		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				con.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+			
+		}
+		*/
+		
+		// delete
+		/*
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			pstmt = con.prepareStatement(deleteSql);
+			pstmt.setInt(1, 11);
+			ret = pstmt.executeUpdate();		
+			System.out.println(ret);		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				con.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+			
+		}
+		*/
+		
+		// select
+//		/*
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			pstmt = con.prepareStatement(selectSql);
+			pstmt.setInt(1, 11);
+			rs = pstmt.executeQuery();		
 			System.out.println(ret);
 			while(rs.next()) {
 			// 각 row 별로 col 한개씩 추출 
-//			System.out.println(rs.getInt("customer_id") + " / "+ rs.getString("customer_nm")); 
-			System.out.println(rs.getString("country_id")+" / "+ rs.getString("country_name"));
+			System.out.println(rs.getInt("customer_id") + " / "+ rs.getString("customer_nm")); 
+//			System.out.println(rs.getString("country_id")+" / "+ rs.getString("country_name"));
 		}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			try {
 				rs.close();
-				stmt.close();
+				pstmt.close();
 				con.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 			
 		}
-		*/
+//		*/
 
 	}
 }
