@@ -22,8 +22,7 @@ public class Test {
 			e.printStackTrace();
 		}
 
-//		String url = "jdbc:mysql://localhost:3306/test";
-		String url = "jdbc:mysql://localhost:3306/ssafydb";
+		String url = "jdbc:mysql://localhost:3306/test";
 		String user = "root";
 		String pwd = "1234";
 		
