@@ -22,26 +22,17 @@ public class Test {
 			e.printStackTrace();
 		}
 
-		String url = "jdbc:mysql://localhost:3306/test";
-//		String url = "jdbc:mysql://localhost:3306/ssafydb";
+//		String url = "jdbc:mysql://localhost:3306/test";
+		String url = "jdbc:mysql://localhost:3306/ssafydb";
 		String user = "root";
 		String pwd = "1234";
 		
-//		/*
 		// test schema
 		String insertSql = "insert into customer values(?,?);";
 		String updateSql = "update customer set customer_nm =? where customer_id = ?;";
 		String deleteSql = "DELETE FROM customer WHERE customer_id = ?;";
 		String selectSql = "select * from customer WHERE customer_id = ?;";
-//		*/
-		
-		/* 
-		//ssafydb schema
-		String selectSql = "select * from countries";
-		String insertSql = "insert into countries values('KO','Corea',3);";
-		String updateSql = "update customer set country_name = 'Korea' where country_id = 'KO';";
-		String deleteSql = "DELETE FROM countries WHERE country_id = 'KO';";
-		*/
+
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -50,12 +41,13 @@ public class Test {
 		int ret = -1;
 		
 		//insert
-//		/*
 		try {
 			con = DriverManager.getConnection(url,user,pwd);
 			pstmt = con.prepareStatement(insertSql);
+
 			pstmt.setInt(1, 11); // (parameterIndex , 해당 위치 값)
 			pstmt.setString(2,"11길동");
+	
 			ret = pstmt.executeUpdate();		
 			System.out.println(ret);		
 		} catch (SQLException e) {
@@ -68,10 +60,9 @@ public class Test {
 				e2.printStackTrace();
 			}			
 		}
-//		 */
+
 		
 		//update
-		/*
 		try {
 			con = DriverManager.getConnection(url,user,pwd);
 			pstmt = con.prepareStatement(updateSql);
@@ -90,10 +81,8 @@ public class Test {
 			}
 			
 		}
-		*/
 		
 		// delete
-		/*
 		try {
 			con = DriverManager.getConnection(url,user,pwd);
 			pstmt = con.prepareStatement(deleteSql);
@@ -111,20 +100,17 @@ public class Test {
 			}
 			
 		}
-		*/
 		
 		// select
-//		/*
 		try {
 			con = DriverManager.getConnection(url,user,pwd);
 			pstmt = con.prepareStatement(selectSql);
-			pstmt.setInt(1, 11);
+//			pstmt.setInt(1, 11);
 			rs = pstmt.executeQuery();		
 			System.out.println(ret);
 			while(rs.next()) {
 			// 각 row 별로 col 한개씩 추출 
 			System.out.println(rs.getInt("customer_id") + " / "+ rs.getString("customer_nm")); 
-//			System.out.println(rs.getString("country_id")+" / "+ rs.getString("country_name"));
 		}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -138,7 +124,6 @@ public class Test {
 			}
 			
 		}
-//		*/
 
 	}
 }
