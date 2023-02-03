@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry excluding="com/|com/|lec0120/inter/Test.java" kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/thkim.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/jsy.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/itsme.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SSAFY/Desktop/kbs.jar"/>
 	<classpathentry kind="lib" path="C:/Users/SSAFY/Downloads/mysql-connector-j-8.0.32.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
